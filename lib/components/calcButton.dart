@@ -21,14 +21,14 @@ class CalcButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       child: SizedBox(
-        height: 65,
-        width: 65,
+        height: 70,
+        width: 70,
         child: FlatButton(
           onPressed: () {
             callback(text);
           },
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Text(
             text,
