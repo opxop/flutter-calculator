@@ -57,6 +57,15 @@ class _CalcAppState extends State<CalcApp> {
       debugShowCheckedModeBanner: false,
       title: 'Slim Calculator',
       home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          elevation: 0.0,
+          title: Text(
+            'Calculator',
+            style: GoogleFonts.montserrat(),
+          ),
+          backgroundColor: Color(0xFF283637),
+        ),
         backgroundColor: Color(0xFF283637),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.end,
