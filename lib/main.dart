@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF283637),
+          backgroundColor: Color(0xFF282A36),
           centerTitle: true,
           elevation: 0.0,
           title: Text(
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-        backgroundColor: Color(0xFF283637),
+        backgroundColor: Color(0xFF282A36),
         body: StandartCalc(),
       ),
     );
