@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                               ? kActiveColor
                               : kInactiveColor,
                           cardImage: SvgPicture.asset(
-                            "assets/image/calculator.svg",
+                            "assets/images/calculator.svg",
                             height: 85.0,
                           ),
                           lable: 'Scietific \n Calculator',
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                               ? kActiveColor
                               : kInactiveColor,
                           cardImage: SvgPicture.asset(
-                            "assets/image/bmi-cal.svg",
+                            "assets/images/bmi-cal.svg",
                             height: 85.0,
                           ),
                           lable: 'BMI \n Calculator',
