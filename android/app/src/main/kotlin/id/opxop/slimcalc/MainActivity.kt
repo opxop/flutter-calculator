@@ -1,4 +1,4 @@
-package com.example.slim_calculator
+package id.opxop.slimcalc
 
 import io.flutter.embedding.android.FlutterActivity
 
