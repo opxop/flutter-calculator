@@ -46,19 +46,20 @@ class _ScientificCalculatorState extends State<ScientificCalculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Calculator'),
+        appBar: AppBar(
+          title: Text('Calculator', style: kAppBarStyle),
+          backgroundColor: kMainColorDark,
+          centerTitle: true,
+        ),
         backgroundColor: kMainColorDark,
-        centerTitle: true,
-      ),
-      backgroundColor: kMainColorDark,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
-          Center(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.10),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Text(
                   _expression,
                   style: TextStyle(
@@ -69,155 +70,154 @@ class _ScientificCalculatorState extends State<ScientificCalculator> {
                 ),
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(right: 30),
-            child: Text(
-              _history,
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 30,
-                color: Color(0xFF545F61),
-              ),
-            ),
-            alignment: Alignment(1, 1),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Card(
-            color: kCardColorDark,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(24),
-                topRight: Radius.circular(24),
-              ),
-            ),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    CalcButton(
-                      text: 'AC',
-                      callback: allClear,
-                      textColor: 0xFF536DFF,
+            Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(right: 30, bottom: 20),
+                  child: Text(
+                    _history,
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 25,
+                      color: Color(0xFF545F61),
                     ),
-                    CalcButton(
-                      text: 'C',
-                      callback: clear,
-                      textColor: 0xFF536DFF,
-                    ),
-                    CalcButton(
-                      text: '%',
-                      callback: numClick,
-                      textColor: 0xFF536DFF,
-                    ),
-                    CalcButton(
-                      text: '/',
-                      callback: numClick,
-                      textColor: 0xFF536DFF,
-                    ),
-                  ],
+                  ),
+                  alignment: Alignment(1, 1),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    CalcButton(
-                      text: '7',
-                      callback: numClick,
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.57,
+                  decoration: BoxDecoration(
+                    color: kCardColorDark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
                     ),
-                    CalcButton(
-                      text: '8',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '9',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '*',
-                      textSize: 28,
-                      callback: numClick,
-                      textColor: 0xFF536DFF,
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    CalcButton(
-                      text: '4',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '5',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '6',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '-',
-                      textSize: 28,
-                      callback: numClick,
-                      textColor: 0xFF536DFF,
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    CalcButton(
-                      text: '1',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '2',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '3',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '+',
-                      textSize: 28,
-                      callback: numClick,
-                      textColor: 0xFF536DFF,
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    CalcButton(
-                      text: '.',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '0',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '00',
-                      callback: numClick,
-                    ),
-                    CalcButton(
-                      text: '=',
-                      textSize: 28,
-                      callback: evalute,
-                      fillColor: 0xFFFFFFFF,
-                      textColor: 0xFF536DFF,
-                    ),
-                  ],
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          CalcButton(
+                            text: 'AC',
+                            callback: allClear,
+                            textColor: 0xFF536DFF,
+                          ),
+                          CalcButton(
+                            text: 'C',
+                            callback: clear,
+                            textColor: 0xFF536DFF,
+                          ),
+                          CalcButton(
+                            text: '%',
+                            callback: numClick,
+                            textColor: 0xFF536DFF,
+                          ),
+                          CalcButton(
+                            text: '/',
+                            callback: numClick,
+                            textColor: 0xFF536DFF,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          CalcButton(
+                            text: '7',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '8',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '9',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '*',
+                            textSize: 28,
+                            callback: numClick,
+                            textColor: 0xFF536DFF,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          CalcButton(
+                            text: '4',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '5',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '6',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '-',
+                            textSize: 28,
+                            callback: numClick,
+                            textColor: 0xFF536DFF,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          CalcButton(
+                            text: '1',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '2',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '3',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '+',
+                            textSize: 28,
+                            callback: numClick,
+                            textColor: 0xFF536DFF,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          CalcButton(
+                            text: '.',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '0',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '00',
+                            callback: numClick,
+                          ),
+                          CalcButton(
+                            text: '=',
+                            textSize: 28,
+                            callback: evalute,
+                            fillColor: 0xFFFFFFFF,
+                            textColor: 0xFF536DFF,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
-            ),
-          )
-        ],
-      ),
-    );
+            )
+          ],
+        ));
   }
 }

@@ -31,22 +31,28 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   'IDK',
-                  style: kCardText,
+                  style: kSubText,
                 ),
-                Text(
-                  'just Calculator!',
-                  style: kHeaderText,
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: screen.height * 0.01,
+                    bottom: screen.height * 0.02,
+                  ),
+                  child: Text(
+                    'just Calculator!',
+                    style: kHeaderText,
+                  ),
                 ),
                 Text(
                   'あいかわらず ~',
-                  style: kCardText,
+                  style: kSubText,
                 ),
               ],
             ),
           ),
-          Card(
-            color: kCardColorDark,
-            shape: RoundedRectangleBorder(
+          Container(
+            decoration: BoxDecoration(
+              color: kCardColorDark,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(50),
                 topRight: Radius.circular(50),

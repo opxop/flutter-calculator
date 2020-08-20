@@ -31,7 +31,7 @@ class CalcButton extends StatelessWidget {
           ),
           child: Text(
             text,
-            style: TextStyle(fontSize: textSize),
+            style: TextStyle(fontFamily: 'Montserrat', fontSize: textSize),
           ),
           color: fillColor != null ? Color(fillColor) : null,
           textColor: Color(textColor),

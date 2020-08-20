@@ -36,7 +36,10 @@ class CardProgram extends StatelessWidget {
                 ),
                 Text(
                   lable,
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.white,
+                      fontSize: 15),
                   textAlign: TextAlign.center,
                 ),
               ],

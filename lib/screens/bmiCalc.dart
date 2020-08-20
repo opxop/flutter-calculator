@@ -15,6 +15,18 @@ class _BmiCalculatorState extends State<BmiCalculator> {
   double _bmi = 0;
   String bmi = '';
   String outputText = '';
+
+  Color _color() {
+    if (_bmi <= 18.5)
+      return Colors.blue;
+    else if (_bmi <= 25)
+      return Colors.green;
+    else if (_bmi <= 30)
+      return Colors.orange;
+    else
+      return Colors.red;
+  }
+
   String getText() {
     if (_bmi <= 18.5)
       return 'Underweight';
@@ -39,7 +51,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
     final screen = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI Calculator'),
+        title: Text('BMI Calculator', style: kAppBarStyle),
         backgroundColor: kMainColorDark,
         centerTitle: true,
       ),
@@ -56,7 +68,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                         children: <Widget>[
                           // Result Card
                           Container(
-                            height: screen.height * 0.23,
+                            height: screen.height * 0.25,
                             width: screen.width * 1 - 50,
                             decoration: BoxDecoration(
                               color: kCardColorDark,
@@ -85,7 +97,11 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                                     children: <Widget>[
                                       Text(
                                         bmi,
-                                        style: kOutputNumber,
+                                        style: TextStyle(
+                                          fontFamily: 'Montserrat',
+                                          color: _color(),
+                                          fontSize: 62,
+                                        ),
                                       ),
                                       SizedBox(
                                         height: screen.height * 0.02,
