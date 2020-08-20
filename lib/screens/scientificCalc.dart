@@ -57,7 +57,7 @@ class _ScientificCalculatorState extends State<ScientificCalculator> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.10),
+                  top: MediaQuery.of(context).size.height * 0.05),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Text(
@@ -85,7 +85,7 @@ class _ScientificCalculatorState extends State<ScientificCalculator> {
                   alignment: Alignment(1, 1),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.57,
+                  padding: EdgeInsets.only(bottom: 10),
                   decoration: BoxDecoration(
                     color: kCardColorDark,
                     borderRadius: BorderRadius.only(
