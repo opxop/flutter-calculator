@@ -30,6 +30,7 @@ dependencies:
   math_expressions: ^2.0.0
   flutter_svg: ^0.18.0
   fluttertoast: ^7.0.2
+  double_back_to_close_app: ^1.2.0
 
 dev_dependencies:
   flutter_test:
